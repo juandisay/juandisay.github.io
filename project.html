@@ -1,0 +1,106 @@
+<!DOCTYPE html">
+<html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>808.com | Page Under Maintainance</title>
+<script src="assets/js/jQuery v-1.11.3.js"></script>
+<script src="assets/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+<link rel="stylesheet" href="assets/css/page.css" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://maps.googleapis.com/maps/api/js"></script>
+<style>
+	
+</style>
+<script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+        var location = new google.maps.LatLng(44.5403, -78.5463);//Change the latitude and longitude according to your location.
+		var mapOptions = {
+          center: location,
+          zoom: 8,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions);
+			marker = new google.maps.Marker({
+				position: location,
+				map: map
+			});
+		marker.setMap(map);
+	  }
+      google.maps.event.addDomListener(window, 'load', initialize);
+		
+		function message(){
+			
+			$("#contactus").hide();
+			$("#message").show();
+	  	}
+		function contactus(){
+			$("#message").hide();
+			$("#contactus").show();
+			initialize();
+		}	 
+	  
+	  	var dateSet=new Date("April 14, 2017 00:00:00");//set the desired date and time in this variable
+		var currDate=new Date();
+		
+	  	var upgradeTime = (dateSet.getTime()/1000)-(currDate.getTime()/1000);
+		var seconds = upgradeTime;
+		function timer() {
+			var days        = Math.floor(seconds/24/60/60);
+			var hoursLeft   = Math.floor((seconds) - (days*86400));
+			var hours       = Math.floor(hoursLeft/3600);
+			var minutesLeft = Math.floor((hoursLeft) - (hours*3600));
+			var minutes     = Math.floor(minutesLeft/60);
+			var remainingSeconds = seconds % 60;
+			if (remainingSeconds < 10) {
+				remainingSeconds = "0" + remainingSeconds; 
+			}
+			document.getElementById('countdown').innerHTML = days + " Days : " + hours + " Hours : " + minutes + " Minutes" /*+ " : "+Math.floor(remainingSeconds)+" Seconds"*/;
+			/*Remove the above comment if you want to display seconds as well*/
+			if (seconds == 0) {
+				clearInterval(countdownTimer);
+				document.getElementById('countdown').innerHTML = "0 Days : 0 Hours : 0 Minutes "/*+" : 0 Seconds"*/;
+			} else {
+				seconds--;
+			}
+		}
+		var countdownTimer = setInterval('timer()', 1000);
+		
+		
+		
+		function subscribe(){
+			alert("Please put you mailer list code here. eg mailchimp connectivity code");
+			/*You can use any mailer to get the user information and forward them auto generated newsletters*/
+		}
+		$(document).ready(function(){
+				$("#contactus").hide();	
+	
+		});
+</script>
+</head>
+
+<body style="background-image:url(assets/images/city-back.jpg); background-size:100% 120%">
+                                                                                          
+</div></div>
+<div class="container" id="message">
+<div id="timer" class="row" style="">
+	<div class="row">
+		<div id="cons" class="col-sm-12" style="font-family:Arial, Helvetica, sans-serif; color:white; text-align:center">
+		<span class="glyphicon glyphicon-alert"></span> WE ARE UNDER MAINTAINANCE</div>
+	</div>
+	<div class="row">
+		<div id="cons" class="col-sm-12" style="font-family:Arial, Helvetica, sans-serif; color:white; text-align:center">
+		<span "></span> Countdown to launch </div>
+	</div>
+	<div class="row">	
+		<div id="countdown" class="time col-sm-12"></div> 
+	</div>
+    <div id="cons" class="col-sm-12" style="font-family:Arial, Helvetica, sans-serif; color:white; text-align:center">
+		<span "></span> <span><a href=".">Back To Home</a></span> </div>
+	
+</div>
+</div>
+</body>
+</html>
