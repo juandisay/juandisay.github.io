@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.f847d6cf398423f03e3f22a8918a977a.js"
+  "/precache-manifest.5562a859a8bd64a7a187da3872a8a31a.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "juandisay"});
